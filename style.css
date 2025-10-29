@@ -49,3 +49,12 @@ body {
 .start-btn:hover {
     background-color: darkred;
 }
+
+.ghost {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background-color: white;
+    border-radius: 50%;
+    pointer-events: none;
+}
