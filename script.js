@@ -28,7 +28,7 @@ startBtn.addEventListener("click", () => {
     const ghost = document.createElement("div")
     ghost.classList.add("ghost")
 
-    const ghostSize = 70;
+    const ghostSize = 120;
 
     const limitX = gameArea.clientWidth - ghostSize;
     const limitY = gameArea.clientHeight - ghostSize;
@@ -42,7 +42,7 @@ startBtn.addEventListener("click", () => {
     ghost.addEventListener("click", () => {
         score++;
         scoreDisplay.textContent =`Score: ${score}`
-        
+
         ghost.remove();
 
     })
