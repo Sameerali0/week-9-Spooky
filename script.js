@@ -18,6 +18,10 @@ startBtn.addEventListener("click", () => {
  })   
 
  function spawnGhost () {
+    const oldGhost = document.querySelector(".ghost")
+    if (oldGhost) {
+        oldGhost.remove()
+    }
 
     const ghost = document.createElement("div")
     ghost.classList.add("ghost")
