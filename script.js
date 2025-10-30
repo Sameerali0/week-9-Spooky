@@ -1,8 +1,10 @@
 const gameArea = document.getElementById("game-area")
 const startBtn = document.getElementById("start-btn")
+const scoreDisplay = document.getElementById("score")
 
 let gameStarted = false;
 let spawnTimer;
+let score = 0;
 
 startBtn.addEventListener("click", () => {
 
@@ -36,6 +38,14 @@ startBtn.addEventListener("click", () => {
 
     ghost.style.left = `${randomPosX}px`;
     ghost.style.top = `${randomPosY}px`
+
+    ghost.addEventListener("click", () => {
+        score++;
+        scoreDisplay.textContent =`Score: ${score}`
+        
+        ghost.remove();
+
+    })
 
     gameArea.appendChild(ghost)
     

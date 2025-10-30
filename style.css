@@ -43,7 +43,7 @@ body {
     border-radius: 8px;
     font-size: 25px;
     cursor: pointer;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 
@@ -57,5 +57,14 @@ body {
     height: 70px;
     background-color: white;
     border-radius: 50%;
-    pointer-events: none;
+    pointer-events: auto;
+    cursor: pointer;
 }
+
+
+.score {
+    text-align: start;
+    font-size: 22px;
+    color: white;
+    text-shadow: 0 0 10px red;
+ }
