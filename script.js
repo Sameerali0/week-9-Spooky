@@ -1,14 +1,20 @@
 const gameArea = document.getElementById("game-area")
 const startBtn = document.getElementById("start-btn")
 const scoreDisplay = document.getElementById("score")
+const showTime = document.getElementById("timer")
 
 let gameStarted = false;
 let spawnTimer;
 let score = 0;
+let time = 30
+let timeCount
 
 startBtn.addEventListener("click", () => {
 
-    if (gameStarted) return; 
+    if (gameStarted){
+          return
+
+    } 
     
     gameStarted = true
     startBtn.disabled =true;
@@ -16,6 +22,10 @@ startBtn.addEventListener("click", () => {
     spawnTimer = setInterval(() => {
         spawnGhost()
     }, 1500);
+
+    timeCount  =setInterval(() =>{
+        timerFunc()
+    }, 1000)
     
  })   
 
@@ -49,4 +59,28 @@ startBtn.addEventListener("click", () => {
 
     gameArea.appendChild(ghost)
     
+}
+
+function timerFunc(){
+time--
+showTime.textContent = `Time: ${time}`
+    if (time <= 0) {
+    gameEnd()
+
+    }
+
+}
+
+function gameEnd(){
+        clearInterval(spawnTimer)
+        clearInterval(timeCount)
+        gameStarted = false
+        startBtn.disabled =false
+
+        const msg = document.getElementById("game-end-msg")
+
+        msg.textContent =`Time up you caught ${score} ghosts`
+        msg.style.display="block"
+
+        gameArea.appendChild(msg)
 }

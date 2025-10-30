@@ -70,3 +70,20 @@ body {
     color: white;
     text-shadow: 0 0 10px red;
  }
+
+.timer{
+    text-align: end;
+    font-size: 22px;
+    color: white;
+    text-shadow: 0 0 10px red;
+  }
+
+.game-end-msg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    color: red;
+    display: none;
+}  
