@@ -63,16 +63,19 @@ body {
     cursor: pointer;
 }
 
+.score-and-timer{
+    display: flex;
+    justify-content: center;
+    gap: 85%;
+}
 
 .score {
-    text-align: start;
     font-size: 22px;
     color: white;
     text-shadow: 0 0 10px red;
  }
 
 .timer{
-    text-align: end;
     font-size: 22px;
     color: white;
     text-shadow: 0 0 10px red;
