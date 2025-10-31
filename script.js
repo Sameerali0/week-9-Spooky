@@ -2,6 +2,7 @@ const gameArea = document.getElementById("game-area")
 const startBtn = document.getElementById("start-btn")
 const scoreDisplay = document.getElementById("score")
 const showTime = document.getElementById("timer")
+const startScreen= document.getElementById("start-screen")
 
 let gameStarted = false;
 let spawnTimer;
@@ -17,7 +18,11 @@ startBtn.addEventListener("click", () => {
     } 
     
     gameStarted = true
-    startBtn.disabled =true;
+    // startBtn.disabled =true;
+
+startScreen.style.display  ="none"
+gameArea.style.display= "block"
+
 
     spawnTimer = setInterval(() => {
         spawnGhost()
@@ -75,7 +80,7 @@ function gameEnd(){
         clearInterval(spawnTimer)
         clearInterval(timeCount)
         gameStarted = false
-        startBtn.disabled =false
+        // startBtn.disabled =false
 
         const msg = document.getElementById("game-end-msg")
 
