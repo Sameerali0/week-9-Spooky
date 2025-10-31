@@ -82,6 +82,13 @@ function gameEnd(){
         gameStarted = false
         // startBtn.disabled =false
 
+        const ghost= document.querySelector(".ghost")
+
+        if (ghost) {
+            ghost.remove()
+
+        }
+
         const msg = document.getElementById("game-end-msg")
 
         msg.textContent =`Time up you caught ${score} ghosts`
