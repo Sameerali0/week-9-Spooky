@@ -7,6 +7,9 @@ const msg = document.getElementById("game-end-msg")
 const playAgain =document.getElementById("play-again")
 const endScreen= document.getElementById("end-screen")
 
+const bgMusic = new Audio("background.mp3")
+bgMusic.loop= true
+bgMusic.volume = 0.5
 
 let gameStarted = false;
 let spawnTimer;
@@ -35,6 +38,8 @@ function startGame() {
     startScreen.style.display  ="none"
     gameArea.style.display= "block"
     endScreen.style.display="none"
+
+    bgMusic.play()
 
 
     spawnTimer = setInterval(() => {
