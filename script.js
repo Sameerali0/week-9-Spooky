@@ -3,6 +3,9 @@ const startBtn = document.getElementById("start-btn")
 const scoreDisplay = document.getElementById("score")
 const showTime = document.getElementById("timer")
 const startScreen= document.getElementById("start-screen")
+const msg = document.getElementById("game-end-msg")
+const playAgain =document.getElementById("play-again")
+
 
 let gameStarted = false;
 let spawnTimer;
@@ -10,7 +13,10 @@ let score = 0;
 let time = 30
 let timeCount
 
-startBtn.addEventListener("click", () => {
+startBtn.addEventListener("click", startGame)
+
+function startGame() {
+    
 
     if (gameStarted){
           return
@@ -18,10 +24,15 @@ startBtn.addEventListener("click", () => {
     } 
     
     gameStarted = true
-    // startBtn.disabled =true;
+    score = 0
+    time =30
 
-startScreen.style.display  ="none"
-gameArea.style.display= "block"
+
+    scoreDisplay.textContent= `score: ${score}`
+    showTime.textContent= `Time: ${time}`
+    playAgain.style.display="none"
+    startScreen.style.display  ="none"
+    gameArea.style.display= "block"
 
 
     spawnTimer = setInterval(() => {
@@ -32,7 +43,7 @@ gameArea.style.display= "block"
         timerFunc()
     }, 1000)
     
- })   
+ }   
 
  function spawnGhost () {
     const oldGhost = document.querySelector(".ghost")
@@ -80,7 +91,6 @@ function gameEnd(){
         clearInterval(spawnTimer)
         clearInterval(timeCount)
         gameStarted = false
-        // startBtn.disabled =false
 
         const ghost= document.querySelector(".ghost")
 
@@ -89,10 +99,21 @@ function gameEnd(){
 
         }
 
-        const msg = document.getElementById("game-end-msg")
 
         msg.textContent =`Time up you caught ${score} ghosts`
         msg.style.display="block"
+        playAgain.style.display="inline-block"
 
-        gameArea.appendChild(msg)
+}
+
+
+playAgain.addEventListener("click", playAgainFunc)
+
+
+
+function playAgainFunc (){
+    msg.style.display= "none"
+    playAgain.style.display="none"
+
+    startGame()
 }
