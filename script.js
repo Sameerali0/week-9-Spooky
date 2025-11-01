@@ -5,6 +5,7 @@ const showTime = document.getElementById("timer")
 const startScreen= document.getElementById("start-screen")
 const msg = document.getElementById("game-end-msg")
 const playAgain =document.getElementById("play-again")
+const endScreen= document.getElementById("end-screen")
 
 
 let gameStarted = false;
@@ -33,6 +34,7 @@ function startGame() {
     playAgain.style.display="none"
     startScreen.style.display  ="none"
     gameArea.style.display= "block"
+    endScreen.style.display="none"
 
 
     spawnTimer = setInterval(() => {
@@ -103,6 +105,8 @@ function gameEnd(){
         msg.textContent =`Time up you caught ${score} ghosts`
         msg.style.display="block"
         playAgain.style.display="inline-block"
+        endScreen.style.display ="flex"
+        gameArea.style.display= "none"
 
 }
 
@@ -112,8 +116,7 @@ playAgain.addEventListener("click", playAgainFunc)
 
 
 function playAgainFunc (){
-    msg.style.display= "none"
-    playAgain.style.display="none"
-
+    endScreen.style.display= "none"
+    gameArea.style.display="block"
     startGame()
 }

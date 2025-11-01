@@ -84,13 +84,13 @@ body {
   }
 
 .game-end-msg{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    /* position: absolute; */
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
     font-size: 50px;
     color: red;
-    display: none;
+    /* display: none; */
 }  
 
 .start-screen{
@@ -110,7 +110,7 @@ body {
     border: none;
     font-size: 25px;
     padding: 10px 25px;
-    margin-top: 27px;
+    margin-top: 10%;
     border-radius: 8px;
     background-color: red;
     color: white;
@@ -120,4 +120,17 @@ body {
 
 .play-again:hover{
     background-color: darkred;
+}
+
+.end-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background: url("background.jpg") center/cover no-repeat;
 }
