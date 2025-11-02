@@ -6,6 +6,8 @@ const startScreen= document.getElementById("start-screen")
 const msg = document.getElementById("game-end-msg")
 const playAgain =document.getElementById("play-again")
 const endScreen= document.getElementById("end-screen")
+const highScoreTxt= document.getElementById("high-score")
+
 
 const bgMusic = new Audio("background.mp3")
 bgMusic.loop= true
@@ -16,6 +18,16 @@ let spawnTimer;
 let score = 0;
 let time = 30
 let timeCount
+
+let highScore =localStorage.getItem("highScore")
+
+if(!highScore){
+
+    highScore=0
+    localStorage.setItem("highScore", highScore)
+
+
+}
 
 startBtn.addEventListener("click", startGame)
 
@@ -106,8 +118,15 @@ function gameEnd(){
 
         }
 
+        if (score > highScore){
+        highScore =score
+
+        localStorage.setItem("highScore", highScore)
+
+    }
 
         msg.textContent =`Time up you caught ${score} ghosts`
+        highScoreTxt.textContent = `High Score: ${highScore}`
         msg.style.display="block"
         playAgain.style.display="inline-block"
         endScreen.style.display ="flex"
