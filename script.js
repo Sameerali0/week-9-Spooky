@@ -8,6 +8,7 @@ const playAgain =document.getElementById("play-again")
 const endScreen= document.getElementById("end-screen")
 const highScoreTxt= document.getElementById("high-score")
 const finalScore =document.getElementById("final-score")
+const highScoreDiplay = document.getElementById("high-scr")
 
 
 
@@ -46,6 +47,7 @@ function startGame() {
     time =30
 
 
+    highScoreDiplay.textContent = `High Score: ${highScore}`
     scoreDisplay.textContent= `score: ${score}`
     showTime.textContent= `Time: ${time}`
     playAgain.style.display="none"

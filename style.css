@@ -68,7 +68,8 @@ body {
 .score-and-timer{
     display: flex;
     justify-content: center;
-    gap: 85%;
+    gap: 38%;
+    margin-top: 25px;
 }
 
 .score {
@@ -76,6 +77,13 @@ body {
     color: white;
     text-shadow: 0 0 10px red;
  }
+
+.high-scr{
+    font-size: 22px;
+    color: white;
+    text-shadow: 0 0 10px red;
+}
+
 
 .timer{
     font-size: 22px;
