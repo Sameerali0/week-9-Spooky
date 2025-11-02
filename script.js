@@ -17,6 +17,8 @@ const bgMusic = new Audio("background.mp3")
 bgMusic.loop= true
 bgMusic.volume = 0.5
 
+const catchSound =new Audio("catch.mp3")
+
 let gameStarted = false;
 let spawnTimer;
 let score = 0;
@@ -107,6 +109,9 @@ function startGame() {
     ghost.addEventListener("click", () => {
         score++;
         scoreDisplay.textContent =`Score: ${score}`
+
+        catchSound.play()   
+        catchSound.currentTime = 0
 
         ghost.remove();
 
