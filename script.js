@@ -10,6 +10,7 @@ const highScoreTxt= document.getElementById("high-score")
 const finalScore =document.getElementById("final-score")
 const highScoreDiplay = document.getElementById("high-scr")
 const bgMusicBtn = document.getElementById("bgMusic-on-off-btn")
+const goHomeBtn= document.getElementById("home-btn")
 
 
 const bgMusic = new Audio("background.mp3")
@@ -166,3 +167,13 @@ function playAgainFunc (){
     gameArea.style.display="block"
     startGame()
 }
+
+goHomeBtn.addEventListener("click", () => {
+
+
+    endScreen.style.display= "none"
+    gameArea.style.display ="none"
+    startScreen.style.display = "flex"
+    msg.style.display = "none"
+
+})
