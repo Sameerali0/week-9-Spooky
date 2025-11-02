@@ -7,6 +7,8 @@ const msg = document.getElementById("game-end-msg")
 const playAgain =document.getElementById("play-again")
 const endScreen= document.getElementById("end-screen")
 const highScoreTxt= document.getElementById("high-score")
+const finalScore =document.getElementById("final-score")
+
 
 
 const bgMusic = new Audio("background.mp3")
@@ -126,6 +128,9 @@ function gameEnd(){
     }
 
         msg.textContent =`Time up you caught ${score} ghosts`
+
+        finalScore.textContent= `Final Score: ${score}`
+        
         highScoreTxt.textContent = `High Score: ${highScore}`
         msg.style.display="block"
         playAgain.style.display="inline-block"

@@ -110,7 +110,7 @@ body {
     border: none;
     font-size: 25px;
     padding: 10px 25px;
-    margin-top: 10%;
+    margin-top: 3%;
     border-radius: 8px;
     background-color: red;
     color: white;
@@ -137,6 +137,12 @@ body {
 
 
 .high-score{
+    font-size: 35px;
+    color: rgb(255, 123, 0);
+    margin-top: 50px;
+}
+
+.final-score{
     font-size: 35px;
     color: rgb(255, 123, 0);
     margin-top: 50px;
