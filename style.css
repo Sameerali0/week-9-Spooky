@@ -156,22 +156,40 @@ body {
 }
 
 
-#bgMusic-on-off-btn {
+.bgMusic-on-off-btn {
     position: absolute;
     top: 15px;
     right: 25px;
-    background: transparent;
+    background: rgba(0, 0, 0, 0.6);
     border: 2px solid red;
-    color: white;
+    color: red;
     padding: 6px 12px;
     border-radius: 8px;
     cursor: pointer;
     z-index: 1;
+    transition: all 0.3s ease;
+    font-size: 18px;
+    font-weight: 600;
 }
 
-#bgMusic-on-off-btn:hover {
-    background-color: red;
-    color: white;
+
+.bgMusic-on-off-btn i{
+    font-size: 20px;
+    
+    color: red;
+    transition: color 0.3s ease;
+}
+
+.bgMusic-on-off-btn:hover{
+    color: darkred;
+    background: white;
+    transform: scale(1.05);
+}
+
+
+.bgMusic-on-off-btn:hover i {
+     color: darkred;
+
 }
 
 .end-screen-btns {
