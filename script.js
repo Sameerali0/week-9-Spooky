@@ -9,7 +9,7 @@ const endScreen= document.getElementById("end-screen")
 const highScoreTxt= document.getElementById("high-score")
 const finalScore =document.getElementById("final-score")
 const highScoreDiplay = document.getElementById("high-scr")
-
+const bgMusicBtn = document.getElementById("bgMusic-on-off-btn")
 
 
 const bgMusic = new Audio("background.mp3")
@@ -21,6 +21,21 @@ let spawnTimer;
 let score = 0;
 let time = 30
 let timeCount
+let isbgMusicOff = false
+
+bgMusicBtn.addEventListener("click", () =>{
+
+
+    isbgMusicOff= !isbgMusicOff
+    bgMusic.muted= isbgMusicOff
+
+    if (isbgMusicOff) {
+
+        bgMusicBtn.innerHTML =`<i class="fa-solid fa-volume-xmark"></i> off`
+    } else {
+        bgMusicBtn.innerHTML =`<i class="fa-solid fa-volume-high"></i> on`
+    }
+})
 
 let highScore =localStorage.getItem("highScore")
 
