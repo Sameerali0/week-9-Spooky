@@ -13,11 +13,13 @@ const bgMusicBtn = document.getElementById("bgMusic-on-off-btn")
 const goHomeBtn= document.getElementById("home-btn")
 
 
-const bgMusic = new Audio("background.mp3")
+const bgMusic = new Audio("sounds/background.mp3")
 bgMusic.loop= true
-bgMusic.volume = 0.5
+bgMusic.volume = 0.3
 
-const catchSound =new Audio("catch.mp3")
+const catchSound =new Audio("sounds/catch.mp3")
+
+const missSound = new Audio("sounds/miss.mp3")
 
 let gameStarted = false;
 let spawnTimer;
@@ -78,7 +80,7 @@ function startGame() {
 
     spawnTimer = setInterval(() => {
         spawnGhost()
-    }, 1500);
+    }, 1800);
 
     timeCount  =setInterval(() =>{
         timerFunc()
@@ -87,10 +89,10 @@ function startGame() {
  }   
 
  function spawnGhost () {
-    const oldGhost = document.querySelector(".ghost")
-    if (oldGhost) {
-        oldGhost.remove()
-    }
+    // const oldGhost = document.querySelector(".ghost")
+    // if (oldGhost) {
+    //     oldGhost.remove()
+    // }
 
     const ghost = document.createElement("div")
     ghost.classList.add("ghost")
@@ -110,8 +112,8 @@ function startGame() {
         score++;
         scoreDisplay.textContent =`Score: ${score}`
 
-        catchSound.play()   
         catchSound.currentTime = 0
+        catchSound.play()   
 
         ghost.remove();
 
@@ -119,6 +121,17 @@ function startGame() {
 
     gameArea.appendChild(ghost)
     
+
+    setTimeout(() => {
+        
+        if(gameArea.contains(ghost)){
+
+            ghost.remove()
+            missSound.pause()
+            missSound.currentTime =0
+            missSound.play()
+        }
+    }, 1300)
 }
 
 function timerFunc(){
