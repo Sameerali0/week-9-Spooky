@@ -93,7 +93,7 @@ function startGame() {
     const ghost = document.createElement("div")
     ghost.classList.add("ghost")
 
-    const ghostSize = 120;
+    const ghostSize = 110;
 
     const limitX = gameArea.clientWidth - ghostSize;
     const limitY = gameArea.clientHeight - ghostSize;
