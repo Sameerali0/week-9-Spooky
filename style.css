@@ -117,14 +117,21 @@ body {
   }
 
 .game-end-msg{
-    /* position: absolute; */
-    /* top: 50%; */
-    /* left: 50%; */
-    /* transform: translate(-50%, -50%); */
+
     font-size: 50px;
     color: red;
-    /* display: none; */
-}  
+
+} 
+
+
+.msg-ghost-img {
+
+    height: 200px;
+    vertical-align: middle;
+    filter: drop-shadow(0 0 15px red);
+    animation: floatGhost 2s ease-in-out infinite;
+}
+
 
 .start-screen{
     position: absolute;

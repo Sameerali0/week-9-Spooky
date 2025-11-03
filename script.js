@@ -163,7 +163,9 @@ function gameEnd(){
 
     }
 
-        msg.textContent =`Time up you caught ${score} ghosts`
+        msg.innerHTML =`Time up you caught ${score} <img src="images/ghost.png" 
+        
+        alt="ghost" class="msg-ghost-img"> ghosts`
 
         finalScore.textContent= `Final Score: ${score}`
         
