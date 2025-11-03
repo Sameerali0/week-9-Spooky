@@ -158,8 +158,9 @@ body {
 
 .high-score, .final-score {
     font-size: 35px;
-    color: rgb(255, 123, 0);
+    color: white;
     margin-top: 50px;
+    text-shadow: 0 0 10px red;
 }
 
 .bgMusic-on-off-btn {
