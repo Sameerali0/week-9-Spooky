@@ -9,3 +9,6 @@ The game includes smooth animations, background music, and sound effects for a c
 - HTML
 - CSS
 - JavaScript
+
+## Screenshot
+![Ghost Catcher Screenshot](images/gameScreenshot.png)
